@@ -18,7 +18,9 @@ placeholder="buscar"
   <thead class="thead-dark">
     <tr>
       <th><button type="button" class="btn btn-outline-light btn-sm"
-         (click)= "AlterarImagem()">{{ExibirImg ? 'Exibir':'Ocultar' }}</button>
+         (click)= "AlterarImagem()">
+         <i class="{{!ExibirImg ? 'fa fa-eye' : 'fa fa-eye-slash'}}"></i>
+         {{ExibirImg ? 'Exibir':'Ocultar' }}</button>
         </th>
       <th>#</th>
       <th>Tema</th>
@@ -37,15 +39,20 @@ placeholder="buscar"
            [style.margin.px]="margemImg"
            >
           </td>
-      <td>{{item.eventoId}}</td>
+      <td>{{item.id}}</td>
       <td>{{item.tema}}</td>
       <td>{{item.local}}</td>
-      <td>{{item.dataEvento}}</td>
+      <td>{{item.dataEvento | DateTimeFormat}}</td>
       <td>{{item.qtdPessoas}}</td>
-      <td>{{item.lote}}</td>
+      <td>{{item.lotes[0].nome}}</td>
       <td>
-        <button type="button" class="btn btn-primary btn-sm mr-2">Editar</button>
-        <button type="button" class="btn btn-danger btn-sm">Excluír</button>
+        <button type="button" class="btn btn-primary btn-sm " tooltip= "Editar">
+          <i class="fa fa-edit"></i>
+
+          </button>
+        <button type="button" class="btn btn-danger btn-sm" tooltip= "Excluir" (click)="openModal(template)">
+          <i class="fa fa-trash"></i>
+          </button>
       </td>
     </tr>
   </tbody>
@@ -59,3 +66,10 @@ placeholder="buscar"
 
 </table>
 
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que quer deletar esse evento?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+<ng-template>
