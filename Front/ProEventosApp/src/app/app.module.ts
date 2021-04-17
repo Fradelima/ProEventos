@@ -15,14 +15,18 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 import { AppComponent } from './app.component';
-import { EventosComponent } from './eventos/eventos.component';
-import { PalestrantesComponent } from './palestrantes/palestrantes.component';
+import { EventosComponent } from './componentes/eventos/eventos.component';
+import { PalestrantesComponent } from './componentes/palestrantes/palestrantes.component';
 import { Browser } from 'protractor';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 import { EventoService } from './Services/evento.service';
 import { DateTimeFormatPipe } from './Helpers/DateTimeFormat.pipe';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ContatosComponent } from './componentes/contatos/contatos.component';
+import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { TituloComponent } from './shared/titulo/titulo.component';
 
 
 @NgModule({
@@ -30,7 +34,11 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     AppComponent,
     EventosComponent,
     PalestrantesComponent,
+    ContatosComponent,
+    DashboardComponent,
+    PerfilComponent,
     NavComponent,
+    TituloComponent,
     DateTimeFormatPipe
    ],
   imports: [

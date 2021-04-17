@@ -3,9 +3,10 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
-import { Evento } from '../models/Evento';
-import { EventoService } from '../Services/evento.service';
-
+import { Evento } from 'src/app/models/Evento';
+import { EventoService } from 'src/app/Services/evento.service';
+// import { Evento } from '../models/Evento';
+// import { EventoService } from '../Services/evento.service';
 
 
 @Component({
@@ -47,12 +48,12 @@ export class EventosComponent implements OnInit {
 
   ngOnInit(): void {
     this.GetEventos();
-    this.spinner.show();
+    // this.spinner.show();
 
-    setTimeout(() => {
+   // setTimeout(() => {
       /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 3000);
+   //   this.spinner.hide();
+  //  }, 3000);
   }
   public AlterarImagem(): void {
     this.ExibirImg = !this.ExibirImg;
@@ -64,7 +65,7 @@ export class EventosComponent implements OnInit {
         this.eventos = eventos;
         this.eventosFiltrados = this.eventos;
        },
-      error => console.log(error),
+      (error: any) => console.log(error),
       );
    }
 
