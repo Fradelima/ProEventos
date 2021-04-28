@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -54,10 +54,12 @@ import { RegistrationComponent } from './componentes/user/registration/registrat
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
-    FormsModule,
+  //  FormsModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ToastrModule . forRoot ( {

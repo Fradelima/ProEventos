@@ -8,6 +8,7 @@
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "strictPropertyInitialization": false,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -19,7 +20,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+
+       "paths": {
+      "@app/*": ["src/app/*"],
+      "@environments/*": ["src/environments/*"]
+ }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
